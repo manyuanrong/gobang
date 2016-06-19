@@ -1,0 +1,31 @@
+{
+	"rules": {
+		"rooms": {
+			".write": "auth != null",
+			".read": true,
+			"$room": {
+				".validate": "data.hasChild('name') || newData.hasChild('name')",
+				"name": {
+					".validate": "newData.isString() && newData.val().length() < 10"
+				},
+				"player1": {
+					".validate": "!data.exists() || root.child('rooms/'+$room+'/player2').val() != newData.val()"
+				},
+				"player2": {
+					".validate": "!data.exists() || root.child('rooms/'+$room+'/player1').val() != newData.val()"
+				},
+				"current": {
+					".validate": true
+				}
+			}
+		},
+		"grids": {
+			".read": true,
+			"$grid": {
+				".read": true,
+				".validate": "root.child('rooms/'+$grid).exists()",
+				".write": "auth.uid == root.child('rooms/'+$grid+'/player1').val() || auth.uid == root.child('rooms/'+$grid+'/player2').val()"
+			}
+		}
+	}
+}
