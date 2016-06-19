@@ -1,34 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<title>五子棋</title>
-		<link rel="stylesheet" type="text/css" href="lib/jquery-weui/dist/css/jquery-weui.min.css" />
-		<link rel="stylesheet" type="text/css" href="lib/jquery-weui/dist/lib/weui.min.css" />
-		<link rel="stylesheet" type="text/css" href="dist/css/main.css" />
-
-		<script src='https://cdn.wilddog.com/js/client/current/wilddog.js'></script>
-		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-		<script src="lib/jquery-weui/dist/js/jquery-weui.min.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript" src="js/auth.js"></script>
-		<script src="js/rooms.js" type="text/javascript" charset="utf-8"></script>
+		<meta charset="UTF-8">
+		<title>Gobang by fengmu456</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
 	</head>
 
 	<body>
-		<h1>五子棋</h1>
-		<p>房间列表</p>
-		<div class="weui_opr_area">
-			<p class="weui_btn_area">
-				<a href="addroom.html" class="weui_btn weui_btn_primary">新建房间</a>
-			</p>
-		</div>
-		<div class="weui_grids">
-		</div>
+		<section class="page-header">
+			<h1 class="project-name">Gobang</h1>
+			<h2 class="project-tagline">基于野狗实时通讯云的网络对战五子棋</h2>
+			<a href="https://github.com/fengmu456/gobang" class="btn">查看源码</a>
+			<a href="https://fengmu456.github.io/gobang/addroom.html" class="btn">玩一玩</a>
+		</section>
+
+		<section class="main-content">
+ 
+			<h3>游戏画面截图</h3>
+ 
+			<div class="images">
+				<img src="img/game.png" />
+				<img src="img/game.png" />
+			</div>
+
+			<h3>采用的技术和库</h3>
+			<ul>
+				<li>
+					<strong>野狗实时通云后端</strong><br/>
+					<a href="https://www.wilddog.com/">访问官网</a><br/> 国内的一个提供多端实时通讯服务的产品，能够在不写后端代码的情况下，实现多端多设备实时通讯。
+				</li>
+				<li>
+					<strong>Vue.js</strong><br/>
+					<a href="http://cn.vuejs.org/">访问官网</a><br/> 只用了非常少的一点，几乎算是没有。没了解过的话，看代码也能够理解
+				</li>
+				<li>
+					<strong>jQuery.js</strong><br/> 相信这个已经见怪不怪了
+				</li>
+				<li>
+					<strong>jquery-weiui</strong><br/> 前端UI库，轻，适合移动端（我做这个程序时对U没多在意，随便找了一个来用I）
+				</li>
+			</ul>
+			
+			<h3>游戏房间初始化主逻辑</h3>
+			<p>就只有这一点图，其他的懒的画了，画这个的原因是因为房间初始化逻辑的游戏主循环中，逻辑分支较多，为了理清思路。</p>
+			<div class="images">
+				<img src="img/野狗五子棋.jpg" />
+			</div>
+			
+			<footer class="site-footer">
+				<span class="site-footer-owner">
+					<a href="https://github.com/fengmu456/gobang">Gobang</a>
+					 is maintained by 
+					 <a href="https://github.com/fengmu456">fengmu456</a>
+				</span>
+			</footer>
+
+		</section>
+
 	</body>
 
 </html>
