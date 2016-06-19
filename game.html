@@ -12,23 +12,24 @@
 		<link rel="stylesheet" type="text/css" href="lib/jquery-weui/dist/lib/weui.min.css" />
 		<link rel="stylesheet" type="text/css" href="dist/css/main.css" />
 
+		<script src="//cdn.bootcss.com/vue/1.0.25/vue.min.js"></script>
 		<script src='https://cdn.wilddog.com/js/client/current/wilddog.js'></script>
 		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 		<script src="lib/jquery-weui/dist/js/jquery-weui.min.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript" src="js/auth.js"></script>
-		<script src="js/rooms.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body>
-		<h1>五子棋</h1>
-		<p>房间列表</p>
-		<div class="weui_opr_area">
-			<p class="weui_btn_area">
-				<a href="addroom.html" class="weui_btn weui_btn_primary">新建房间</a>
-			</p>
+		<h1>五子棋:{{roomId}}</h1>
+		<p>{{tips}}</p>
+		<div class="board-outer">
+			<div v-on:click="onAddChessman" class="board" id="board">
+			</div>
 		</div>
-		<div class="weui_grids">
+
+		<div class="status">
+			<a href="javascript:;" v-on:click="clear()" class="weui_btn weui_btn_primary" style="max-width: 200px;">开始新局</a>
 		</div>
+		<script type="text/javascript" src="js/game.js"></script>
 	</body>
 
 </html>
